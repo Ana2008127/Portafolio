@@ -1,13 +1,297 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio Sofía Murillo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f9f7fc, #efeaff);
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 4px solid #9d4edd;
+    }
+
+    header div {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    header h1 {
+      font-weight: 600;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #7b2ff7;
+    }
+
+    header p {
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #7b2ff7;
+      border-bottom: 3px solid #d8b4fe;
+      padding-bottom: 6px;
+      margin-bottom: 30px;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(124,58,237,0.1);
+      background: #fafafa;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(124,58,237,0.25);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h3 {
+      margin: 0 0 10px;
+      color: #7b2ff7;
+    }
+
+    .project-content p {
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .skill {
+      background: #f3e8ff;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-weight: 600;
+      color: #7b2ff7;
+      box-shadow: 0 3px 8px rgba(124,58,237,0.15);
+    }
+
+    .edu-exp {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .edu-exp > div {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    ul.timeline {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.timeline li {
+      margin-bottom: 18px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    ul.timeline li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 10px;
+      height: 10px;
+      background: #7b2ff7;
+      border-radius: 50%;
+    }
+
+    ul.timeline li strong {
+      color: #5b21b6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #f3e8ff;
+      border-radius: 20px;
+    }
+
+    footer a {
+      color: #7b2ff7;
+      font-weight: 600;
+      margin: 0 15px;
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    footer a:hover {
+      border-color: #7b2ff7;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .edu-exp {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <img src="c:\Users\anaso\Downloads\img4.jpeg" alt="Foto" class="profile-pic" />
+    <div>
+      <h1>Ana Sofia Murillo</h1>
+      <p>Soy una desarrolladora de software en formación, actualmente terminando mi bachillerato, y también estudiando cosmetología. Me apasiona combinar la tecnología con la creatividad para desarrollar soluciones innovadoras y prácticas. Tengo experiencia en JavaScript, php y html, y busco crecer profesionalmente contribuyendo en proyectos que integren mis dos áreas de interés..</p>
+    </div>
+  </header>
+
+  <section class="projects">
+    <h2>Proyectos Destacados</h2>
+    <div class="project-list">
+      <article class="project-card">
+        <img class="project-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZltC1IQIbRwVzuUbBDIDZDsETP5-qqZ8O_UMcgUd4dZa7_lGlEH-OYAX7j3WW1Gly10&usqp=CAU" alt="IA Psicología" />
+        <div class="project-content">
+          <h3>IA de psicología</h3>
+          <p>Desarrollé una inteligencia artificial capaz de brindar apoyo emocional básico y orientación psicológica.</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img class="project-img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Landing Moda" />
+        <div class="project-content">
+          <h3>Veloura - Landing Page</h3>
+          <p>Landing elegante para una marca de moda, creada con HTML5, CSS3 y animaciones CSS.</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img class="project-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="UserVault API" />
+        <div class="project-content">
+          <h3>UserVault API</h3>
+          <p>API REST para gestión de usuarios con Node.js, Express y autenticación JWT.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Habilidades Técnicas</h2>
+    <div class="skill-list">
+      <span class="skill">HTML</span>
+      <span class="skill">CSS</span>
+      <span class="skill">Php</span>
+      <span class="skill">Python</span>
+      <span class="skill">Visual Studio Code</span>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Habilidades Blandas</h2>
+    <div class="skill-list">
+      <span class="skill">Comunicación</span>
+      <span class="skill">Creatividad</span>
+      <span class="skill">Empatía</span>
+      <span class="skill">Buena actitud</span>
+      <span class="skill">Adaptación</span>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>Sobre mí</h2>
+    <p>Soy estudiante de bachillerato y cosmetología, entusiasta del desarrollo web. Me considero una persona creativa, con buena actitud, siempre dispuesta a aprender y aportar con energía positiva. Me gusta combinar la tecnología con el diseño y crear soluciones que ayuden a los demás.</p>
+  </section>
+
+  <section class="edu-exp">
+    <div>
+      <h2>Educación</h2>
+      <ul class="timeline">
+        <li><strong>Bachillerato en Curso</strong> — Colegio perpetuo socorro (2025)</li>
+        <li><strong>Media técnica programación de software</strong> — SENA (2024)</li>
+        <li><strong>Curso básico de Cosmetología</strong> — (2024)</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Experiencia</h2>
+      <ul class="timeline">
+        <li><strong>Prácticas Frontend</strong> — Agencia Creativa (2024)</li>
+        <li><strong>App de tareas</strong> — Proyecto personal</li>
+        <li><strong>Página de moda (HTML + CSS)</strong> — Proyecto personal</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="hobbies">
+    <h2>Hobbies</h2>
+    <p>Me gusta la fotografía, la gastronomía, leer, hacer deporte y salir a caminar en mis tiempos libres.</p>
+  </section>
+
+</div>
+
+<footer>
+  <p>Contacto: 
+    <a href="mailto:sofimejia850@email.com">sofimejia850@email.com</a> | 
+    <a href="https://github.com/Ana2008127" target="_blank" rel="noopener">GitHub</a> | 
+    <a href="https://replit.com/~" target="_blank" rel="noopener">Replit</a>
+  </p>
+</footer>
+
+</body>
 </html>
+
